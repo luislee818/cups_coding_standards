@@ -150,6 +150,85 @@ Exception classes should be in Pascal case, and always ends with the suffix "Exc
 Attributes should be in Pascal case, and ends in the word "Attribute"
         public class EditAttribute: Attribute { //... }
 
+Extension classes should be in Pascal case, and always ends with the suffix "Extensions"
+        public static class StringExtensions
+
 Type T in Generics should be ALL CAPS
         public class MyGeneric<KEY, ENTITY> { //... }
     }
+
+####Acronyms and Abbreviations
+Acronyms shorter than three letters should be all uppercase, acronyms longer than two letters should have only the first letter capitalized.
+    validateXmlDocument
+    stringHtml
+    httpContext
+Avoid abbreviations, except for "Identifier" (use of "id" is accepted) and "Okay" (use of "Ok" is accepted). Use meaningful, descriptive words to name methods and variables. Do not use abbreviations.
+    // correct
+    string address;
+    int number;
+
+    // avoid
+    string addr;
+    int num;
+
+####More conventions
+Use descriptive variable names.
+
+Do not use single character variable names, except in loops.
+    // correct
+    for (int i = 0; i < numberOfLoops; i++)
+    {
+    }
+
+    // avoid
+    int m;
+    string s;
+
+Do not use [Hungarian notation.](http://en.wikipedia.org/wiki/Hungarian_notation).
+    // correct
+    int age;
+    string name;
+    bool married;
+
+    // avoid
+    int iAge;
+    string strName;
+    bool bMarried;
+
+Do not use underscore (_) for local variable names or to prefix member variables.
+    // avoid
+    int m_age;
+    string m_name;
+
+Do prefix Boolean variables, properties and methods with words like "is", "has", "can", etc.
+    bool isValid;
+    bool hasChildEntries;
+    bool canFinish;
+
+Do name methos with a verb-object pairing.
+    public void ShowReceipt();
+    public void ValidateInputs();
+
+Do name methods with return types to describe the object being returned.
+    private int CalculateDaysSinceMoonLanding();
+    protected string GetUsername();
+
+Do suffix user controls with the word "control".
+    CoolCalendarControl.ascx
+    CustomSuperCrazyAjaxTextBoxControl.ascx
+
+Do suffix UI elements with the control's name.
+    FirstNameTextBox
+    CompanyDropDownList
+
+Do always use the C# keywords rather than the aliases in System namespace
+    // correct
+    object item1;
+    string item2;
+    int item3;
+
+    // avoid
+    Object item1;
+    String item2;
+    Int32 item3;
+

@@ -532,12 +532,234 @@ See <a href="http://stackoverflow.com/a/9894411">this link on StackOverflow</a> 
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-31">&#182;</a>
               </div>
+              <p>Extension classes should be in Pascal case, and always ends with the suffix &quot;Extensions&quot;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    public static <span class="class"><span class="keyword">class</span> <span class="title">StringExtensions</span></span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-32">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-32">&#182;</a>
+              </div>
               <p>Type T in Generics should be ALL CAPS</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre>    public <span class="class"><span class="keyword">class</span> <span class="title">MyGeneric</span>&lt;<span class="title">KEY</span>, <span class="title">ENTITY</span>&gt; { //... }</span>
 }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-33">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-33">&#182;</a>
+              </div>
+              <h4 id="acronyms-and-abbreviations">Acronyms and Abbreviations</h4>
+<p>Acronyms shorter than three letters should be all uppercase, acronyms longer than two letters should have only the first letter capitalized.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>validateXmlDocument
+stringHtml
+httpContext</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-34">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-34">&#182;</a>
+              </div>
+              <p>Avoid abbreviations, except for &quot;Identifier&quot; (use of &quot;id&quot; is accepted) and &quot;Okay&quot; (use of &quot;Ok&quot; is accepted). Use meaningful, descriptive words to name methods and variables. Do not use abbreviations.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="regexp">//</span> correct
+string address;
+int number;
+
+<span class="regexp">//</span> avoid
+string addr;
+int num;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-35">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-35">&#182;</a>
+              </div>
+              <h4 id="more-conventions">More conventions</h4>
+<p>Use descriptive variable names.</p>
+<p>Do not use single character variable names, except in loops.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="regexp">//</span> correct
+<span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; numberOfLoops; i++)
+{
+}
+
+<span class="regexp">//</span> avoid
+int m;
+string s;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-36">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-36">&#182;</a>
+              </div>
+              <p>Do not use <a href="http://en.wikipedia.org/wiki/Hungarian_notation">Hungarian notation.</a>.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="regexp">//</span> correct
+int age;
+string name;
+bool married;
+
+<span class="regexp">//</span> avoid
+int iAge;
+string strName;
+bool bMarried;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-37">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-37">&#182;</a>
+              </div>
+              <p>Do not use underscore (_) for local variable names or to prefix member variables.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="regexp">//</span> avoid
+int m_age;
+string m_name;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-38">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-38">&#182;</a>
+              </div>
+              <p>Do prefix Boolean variables, properties and methods with words like &quot;is&quot;, &quot;has&quot;, &quot;can&quot;, etc.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>bool isValid;
+bool hasChildEntries;
+bool canFinish;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-39">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-39">&#182;</a>
+              </div>
+              <p>Do name methos with a verb-object pairing.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>public <span class="reserved">void</span> ShowReceipt();
+public <span class="reserved">void</span> ValidateInputs();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-40">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-40">&#182;</a>
+              </div>
+              <p>Do name methods with return types to describe the object being returned.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>private int CalculateDaysSinceMoonLanding();
+protected string GetUsername();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-41">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-41">&#182;</a>
+              </div>
+              <p>Do suffix user controls with the word &quot;control&quot;.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>CoolCalendarControl.ascx
+CustomSuperCrazyAjaxTextBoxControl.ascx</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-42">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-42">&#182;</a>
+              </div>
+              <p>Do suffix UI elements with the control&#39;s name.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>FirstNameTextBox
+CompanyDropDownList</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-43">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-43">&#182;</a>
+              </div>
+              <p>Do always use the C# keywords rather than the aliases in System namespace</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="regexp">//</span> correct
+object item1;
+string item2;
+int item3;
+
+<span class="regexp">//</span> avoid
+Object item1;
+String item2;
+Int32 item3;</pre></div></div>
             
         </li>
         
