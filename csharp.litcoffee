@@ -232,3 +232,146 @@ Do always use the C# keywords rather than the aliases in System namespace
     String item2;
     Int32 item3;
 
+Declarations
+------------
+
+One declaration per line is recommended since it encourages commenting.
+    // correct
+    int level;    // level of the indentations
+    int size;    // size of the table
+
+    // avoid
+    int level, size;
+
+Try to initialize local variables where they're declared. The only reason not to initialize a variable where it's declared is if the initial value depends on some computation occuring first.
+    int indentationInSpaces = 4;
+
+Avoid declarations that hide declarations at higher levels. For example, do not declare the same variable name in an inner block.
+
+Declare variables as close as possible to where it is first used.
+    // avoid
+    int level = 1;
+    if (shouldProceed)
+    {
+        int level = 20;
+    }
+
+When coding C# classes and interfaces, the following formatting rules should be followed.
+    // some formatting rules
+* Open brace "{" appears on the line after the declaration statement
+    public class MyClass
+    {
+* No space between a method name and the parenthesis "(" starting its parameter list
+        public void ShowAge(int age)
+        {
+            // ...
+        }
+* Methods are separated by one blank line
+        public void ShowName(string name)
+        {
+            // ...
+        }
+* Closing brace "}" starts a line by itself indented to match its corresponding opening statement, except when it is a null statement the "}" should appear immediately after the "{"
+        public void DoNothing() { }
+    }
+
+Statements
+----------
+
+Each line should contain at most one statement.
+    // correct
+    int variableA = 1;
+
+    // avoid
+    int variableB = 1; variableB += 1;
+
+Compound statements are statements that contain lists of statements enclosed in braces: "{ statements }"
+* The enclosed statements should be indented one more level than the compound statement.
+* The opening brace should immediately follow the line that begins the compound statement; the closing brace should match the column of the opening brace.
+* Braces are used around all statements, even single statements, when they are part of a control structure, such as an if-else or for statement. This makes it easier to add statements without accidentally introduction bugs due to forgetting to add braces.
+    for (int i = 0; i < 10; i++)
+    {
+        if (someListOfBools[i])
+        {
+            return;
+        }
+    }
+
+A **return** statement with a value should not use parentheses unless they make the return value more obvious in some way.
+    return foo;
+    return (likeMusic && likeMovies);
+
+More example on compound statements.
+    // some of the examples below are pseudo-code
+
+The **if-else** class of statements should have the following form, ***always use braces***.
+    string masks = "XXXXXX";
+
+    if (accountNumberLength >= 6)
+    {
+        return masks + accountNumber.Remove(0, 6);
+    }
+    else
+    {
+        return masks;
+    }
+
+A **for** statement should have the following form.
+    for (initialization; condition; update)
+    {
+        statement;
+    }
+
+An empty **for** statement (one in which all the work is done in the initialization, condition, and update clauses) should have the following form:
+    for (initialization; condition; update);
+
+A **while** statement should have the following form.
+    while (condition)
+    {
+        statements;
+    }
+
+An empty **while** statement should have the following form.
+    while (condition);
+
+A **do-while** statement should have the following form.
+    do
+    {
+        statements;
+    }
+    while (condition);
+
+A **switch** statement should have the following form.
+    switch (condition)
+    {
+        case ABC:
+        {
+            statements;
+            // falls through (add this comment everytime the case falls through)
+        }
+        case DEF:
+        {
+            statements;
+            break;
+        }
+        default:
+        {
+            statements;
+            break;
+        }
+    }
+
+A **try-catch** statement should have the following form.
+    try
+    {
+        statements;
+    }
+    catch (ExceptionClass e)
+    {
+        statements;
+    }
+    finally
+    {
+        statements;
+        // Use finally only if needed
+    }
