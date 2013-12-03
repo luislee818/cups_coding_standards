@@ -375,3 +375,51 @@ A **try-catch** statement should have the following form.
         statements;
         // Use finally only if needed
     }
+
+White Space
+-----------
+
+***Blank lines*** improve readability by setting off sections of code that are logically related.
+One blank line (two carriage returns) should always be used in the following circumstances:
+* Between methods
+* Before a block or single line comment
+* Between the local variables in a method and its first statement
+* Between logical sections inside a method to improve readability
+
+Do not insert a blank line before *loop*s, *if*s, *using*s, etc if the previous line is not indented as far as the current statement or it is a comment.
+
+Do not insert a blank line after a closing curly bracket if the next line is not indented the same amount or it is a comment.
+    // correct usage of blank lines in a statement
+    public void MyMethod()
+    {
+        int localVar = 1;
+
+        using(SqlConnection conn = new ...)
+        {
+            // statements
+        }
+
+        int test = 0;
+
+        for(int index = 0; index < limit; index++)
+        {
+            // statements
+        }
+
+        while (test > limit)
+        {
+            // statements
+        }
+    }
+
+White spaces should be used in the following circumstances
+* A keyword followed by a parenthesis should be separated by a space (this is default Visual Studio behavior).
+    if (condition)
+    {
+        statements;
+    }
+* A blank space should appear after commas in argument lists.
+    SomeMethod(arg1, arg2);
+* All binary operators except . (period) should be separated from the operands by spaces. White spaces should never separate unary operators such as unary minus, increment ("++"), decrement ("--") for their operands.
+    nice += 1;
+    counter++;

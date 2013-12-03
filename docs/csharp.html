@@ -1180,6 +1180,120 @@ int variableB = <span class="number">1</span>; variableB += <span class="number"
             
         </li>
         
+        
+        <li id="section-66">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-66">&#182;</a>
+              </div>
+              <h2 id="white-space">White Space</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-67">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-67">&#182;</a>
+              </div>
+              <p><strong><em>Blank lines</em></strong> improve readability by setting off sections of code that are logically related.
+One blank line (two carriage returns) should always be used in the following circumstances:</p>
+<ul>
+<li>Between methods</li>
+<li>Before a block or single line comment</li>
+<li>Between the local variables in a method and its first statement</li>
+<li>Between logical sections inside a method to improve readability</li>
+</ul>
+<p>Do not insert a blank line before <em>loop</em>s, <em>if</em>s, <em>using</em>s, etc if the previous line is not indented as far as the current statement or it is a comment.</p>
+<p>Do not insert a blank line after a closing curly bracket if the next line is not indented the same amount or it is a comment.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="regexp">//</span> correct usage <span class="keyword">of</span> blank lines <span class="keyword">in</span> a statement
+public <span class="reserved">void</span> MyMethod()
+{
+    int localVar = <span class="number">1</span>;
+
+    using(SqlConnection conn = <span class="keyword">new</span> ...)
+    {
+        <span class="regexp">//</span> statements
+    }
+
+    int test = <span class="number">0</span>;
+
+    <span class="keyword">for</span>(int index = <span class="number">0</span>; index &lt; limit; index++)
+    {
+        <span class="regexp">//</span> statements
+    }
+
+    <span class="keyword">while</span> (test &gt; limit)
+    {
+        <span class="regexp">//</span> statements
+    }
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-68">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-68">&#182;</a>
+              </div>
+              <p>White spaces should be used in the following circumstances</p>
+<ul>
+<li>A keyword followed by a parenthesis should be separated by a space (this is default Visual Studio behavior).</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">if</span> (condition)
+{
+    statements;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-69">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-69">&#182;</a>
+              </div>
+              <ul>
+<li>A blank space should appear after commas in argument lists.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>SomeMethod(arg1, arg2);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-70">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-70">&#182;</a>
+              </div>
+              <ul>
+<li>All binary operators except . (period) should be separated from the operands by spaces. White spaces should never separate unary operators such as unary minus, increment (&quot;++&quot;), decrement (&quot;--&quot;) for their operands.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>nice += <span class="number">1</span>;
+counter++;</pre></div></div>
+            
+        </li>
+        
     </ul>
   </div>
 </body>
