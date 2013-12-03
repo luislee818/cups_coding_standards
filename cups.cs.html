@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>C# Coding Standards</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <h1 id="c-coding-standards">C# Coding Standards</h1>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>This is a sample file illustrating the coding standard of C# for CUPS team.</p>
+<p>This annotated <a href="https://github.com/luislee818/cups_coding_standards">source</a> was generated with <a href="http://jashkenas.github.io/docco/">Docco</a>.</p>
+<h2 id="file-organization">File Organization</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <h4 id="the-namespace-and-using-statements">The Namespace And Using Statements</h4>
+<p>The first non-comment line of most C# source files is the <strong>using</strong> statements.
+After that, the <em>namespace</em> will follow: For example:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">using</span> System;
+<span class="keyword">using</span> System.Web;
+
+<span class="keyword">namespace</span> TaylorCorp.TD.Travel.Ttrs.BO</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <h4 id="class-and-interface-declarations">CLASS AND INTERFACE DECLARATIONS</h4>
+<p>Description of <em>Class</em> or <em>Interface</em>, comment with ///</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">public</span> <span class="keyword">class</span> SomeRandomClass
+{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Class (static) variables</p>
+<ol>
+<li>Private variables</li>
+<li>Protected variables</li>
+</ol>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">object</span> privateObject;
+    <span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">string</span> protectedString;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Instance variables</p>
+<ol>
+<li>Private variables</li>
+<li>Protected variables</li>
+</ol>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">private</span> <span class="keyword">const</span> <span class="keyword">string</span> FixedString;
+    <span class="keyword">protected</span> <span class="keyword">readonly</span> <span class="keyword">int</span> someReadonlyNumber;
+    <span class="keyword">private</span> <span class="keyword">int</span> randomNumber;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Constructors</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> SomeRandomClass()
+    {
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Properties</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> <span class="keyword">int</span> PropertyOne
+    {
+        <span class="keyword">return</span> randomNumber;
+    }
+
+    <span class="keyword">public</span> <span class="keyword">int</span> PropertyTwo
+    {
+        <span class="keyword">get</span>; <span class="keyword">set</span>;
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Methods</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">int</span> CalculateSomething()
+    {
+    }
+
+    <span class="keyword">public</span> <span class="keyword">void</span> DoSomethingCool()
+    {
+    }
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <h2 id="indentation">Indentation</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <h4 id="standard-indentation">Standard Indentation</h4>
+<p>Maintain strict indentation using <strong>tabs</strong>. <strong><em>Do not use spaces</em></strong> for formatting.  A tab is the equivalent of <strong>4 spaces</strong>.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">public</span> <span class="keyword">int</span> PropertyOne
+{
+    <span class="keyword">return</span> randomNumber;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <h4 id="line-length">Line Length</h4>
+<p>Avoid lines of code longer than <strong>100 characters</strong>, since they’re not handled well by many terminals and tools.  This eliminates the need for horizontal scrolling on lower resolution monitors.
+See <a href="http://stackoverflow.com/a/9894411">this link on StackOverflow</a> on setting up in Visual Studio.</p>
+<h4 id="wrapping-lines">Wrapping Lines</h4>
+<p>When an expression will not fit on a single line, break it according to these general principles:</p>
+<ul>
+<li>Break after a comma</li>
+<li>Break after an operator</li>
+<li>Prefer higher-level breaks to lower-level breaks</li>
+<li>If the above rules lead to a confusing code or to code that’s squished up against the right margin, just indent with a Tab instead</li>
+<li>Indentationent with a Tab from the primary/first line</li>
+<li>Avoid breaking up parenthesized expressions</li>
+</ul>
+<h2 id="comments">Comments</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>C# programs can have two kinds of comments: implementation comments and documentation comments. Implementation comments are delimited by /<em>…</em>/ and //. Documentation comments are delimited by ///.</p>
+<p>Avoid block comments, for they make formatting and reading difficult.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="comment">/* should avoid this kind of comment */</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>Short comments can appear on a single line indented to the level of the code that follows. If a comment needs to be written in multiple lines use single line comments.</p>
+<p>Use tab (equals to 4 spaces) between statement and trailing comments</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> mysteryVariable;    <span class="comment">// trailing comments</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <h2 id="naming-conventions">Naming Conventions</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <h4 id="general-naming-conventions">General naming conventions</h4>
+<p>Files should be in Pascal case, for example: <strong><em>SomeClassFile.cs</em></strong></p>
+<p>Namespaces should be in Pascal case, and in the following convention (<em>department</em> is optional):</p>
+<p>TaylorCorp.&lt;Company&gt;.&lt;Department&gt;.&lt;Solution&gt;.&lt;Project&gt;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">namespace</span> TaylorCorp.NorthernLights.CUPS.Services</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <p>Interfaces should be in Pascal case, and always begins with the prefix &quot;I&quot;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">public</span> <span class="keyword">interface</span> IPdfExpert
+{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <p>Methods should be in Pascal case</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">void</span> DrawPdfByHand();
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-19">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-19">&#182;</a>
+              </div>
+              <p>Enum types and values should be in Pascal case</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">public</span> <span class="keyword">enum</span> OutputFileType
+{
+    PreviewImage
+    ProofPdf,
+    PressPdf
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
+              </div>
+              <p>Classes should be in Pascal case, Business Logic and Data Access classes should have BL and DA suffixes respectively, like <strong>PersonBL</strong> and <strong>PersonDA</strong>; Business Object classes should <em>NOT</em> have a BO suffix.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">public</span> <span class="keyword">class</span> FooClass
+{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <p>Read-only static variables should be in Pascal case</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> SomePrivateVariable;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <p>Constants should be in Pascal case</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> <span class="keyword">const</span> <span class="keyword">string</span> InternalProcedureName = <span class="string">"foo"</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <p>Instance variables should be in Camel case</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">private</span> <span class="keyword">string</span> someString;
+    <span class="keyword">protected</span> <span class="keyword">string</span> anotherString;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-24">&#182;</a>
+              </div>
+              <p>Events should be in Pascal case</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> <span class="keyword">event</span> Action&lt;<span class="keyword">int</span>&gt; ValueChange;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-25">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-25">&#182;</a>
+              </div>
+              <p>Parameters should be in Camel case</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> <span class="keyword">void</span> BazMethod(<span class="keyword">string</span> quxx) { <span class="comment">//... }</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-26">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-26">&#182;</a>
+              </div>
+              <p>Properties should be in Pascal case</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> <span class="keyword">string</span> SomeString { <span class="keyword">get</span>; <span class="keyword">set</span>; }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-27">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-27">&#182;</a>
+              </div>
+              <p>Exception classes should be in Pascal case, and always ends with the suffix &quot;Exception&quot;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> <span class="keyword">class</span> AuthorNotFoundException: Exception { <span class="comment">//... }</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-28">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-28">&#182;</a>
+              </div>
+              <p>Attributes should be in Pascal case, and ends in the word &quot;Attribute&quot;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> <span class="keyword">class</span> EditAttribute: Attribute { <span class="comment">//... }</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-29">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-29">&#182;</a>
+              </div>
+              <p>Extension classes should be in Pascal case, and always ends with the suffix &quot;Extensions&quot;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> StringExtensions</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-30">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-30">&#182;</a>
+              </div>
+              <p>Type T in Generics should be ALL CAPS</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> <span class="keyword">class</span> MyGeneric&lt;KEY, ENTITY&gt; { <span class="comment">//... }</span>
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-31">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-31">&#182;</a>
+              </div>
+              <h4 id="acronyms-and-abbreviations">Acronyms and Abbreviations</h4>
+<p>Acronyms shorter than three letters should be all uppercase, acronyms longer than two letters should have only the first letter capitalized.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>validateXmlDocument
+stringHtml
+httpContext</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-32">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-32">&#182;</a>
+              </div>
+              <p>Avoid abbreviations, except for &quot;Identifier&quot; (use of &quot;id&quot; is accepted) and &quot;Okay&quot; (use of &quot;Ok&quot; is accepted). Use meaningful, descriptive words to name methods and variables. Do not use abbreviations.
+correct</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">string</span> address;
+<span class="keyword">int</span> number;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-33">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-33">&#182;</a>
+              </div>
+              <p>avoid</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">string</span> addr;
+<span class="keyword">int</span> num;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-34">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-34">&#182;</a>
+              </div>
+              <h4 id="more-conventions">More conventions</h4>
+<p>Use descriptive variable names.</p>
+<p>Do not use single character variable names, except in loops.
+correct</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numberOfLoops; i++)
+{
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-35">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-35">&#182;</a>
+              </div>
+              <p>avoid</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> m;
+<span class="keyword">string</span> s;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-36">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-36">&#182;</a>
+              </div>
+              <p>Do not use <a href="http://en.wikipedia.org/wiki/Hungarian_notation">Hungarian notation.</a>.
+correct</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> age;
+<span class="keyword">string</span> name;
+<span class="keyword">bool</span> married;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-37">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-37">&#182;</a>
+              </div>
+              <p>avoid</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> iAge;
+<span class="keyword">string</span> strName;
+<span class="keyword">bool</span> bMarried;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-38">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-38">&#182;</a>
+              </div>
+              <p>Do not use underscore (_) for local variable names or to prefix member variables.
+avoid</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> m_age;
+<span class="keyword">string</span> m_name;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-39">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-39">&#182;</a>
+              </div>
+              <p>Do prefix Boolean variables, properties and methods with words like &quot;is&quot;, &quot;has&quot;, &quot;can&quot;, etc.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">bool</span> isValid;
+<span class="keyword">bool</span> hasChildEntries;
+<span class="keyword">bool</span> canFinish;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-40">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-40">&#182;</a>
+              </div>
+              <p>Do name methos with a verb-object pairing.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">public</span> <span class="keyword">void</span> ShowReceipt();
+<span class="keyword">public</span> <span class="keyword">void</span> ValidateInputs();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-41">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-41">&#182;</a>
+              </div>
+              <p>Do name methods with return types to describe the object being returned.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">private</span> <span class="keyword">int</span> CalculateDaysSinceMoonLanding();
+<span class="keyword">protected</span> <span class="keyword">string</span> GetUsername();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-42">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-42">&#182;</a>
+              </div>
+              <p>Do suffix user controls with the word &quot;control&quot;.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>CoolCalendarControl.ascx
+CustomSuperCrazyAjaxTextBoxControl.ascx</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-43">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-43">&#182;</a>
+              </div>
+              <p>Do suffix UI elements with the control&#39;s name.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>FirstNameTextBox
+CompanyDropDownList</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-44">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-44">&#182;</a>
+              </div>
+              <p>Do always use the C# keywords rather than the aliases in System namespace
+correct</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">object</span> item1;
+<span class="keyword">string</span> item2;
+<span class="keyword">int</span> item3;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-45">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-45">&#182;</a>
+              </div>
+              <p>avoid</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>Object item1;
+String item2;
+Int32 item3;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-46">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-46">&#182;</a>
+              </div>
+              <h2 id="declarations">Declarations</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-47">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-47">&#182;</a>
+              </div>
+              <p>One declaration per line is recommended since it encourages commenting.
+correct</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> level;    <span class="comment">// level of the indentations</span>
+<span class="keyword">int</span> size;    <span class="comment">// size of the table</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-48">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-48">&#182;</a>
+              </div>
+              <p>avoid</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> level, size;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-49">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-49">&#182;</a>
+              </div>
+              <p>Try to initialize local variables where they&#39;re declared. The only reason not to initialize a variable where it&#39;s declared is if the initial value depends on some computation occuring first.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> indentationInSpaces = <span class="number">4</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-50">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-50">&#182;</a>
+              </div>
+              <p>Avoid declarations that hide declarations at higher levels. For example, do not declare the same variable name in an inner block.</p>
+<p>Declare variables as close as possible to where it is first used.
+avoid</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> level = <span class="number">1</span>;
+<span class="keyword">if</span> (shouldProceed)
+{
+    <span class="keyword">int</span> level = <span class="number">20</span>;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-51">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-51">&#182;</a>
+              </div>
+              <p>When coding C# classes and interfaces, the following formatting rules should be followed.
+some formatting rules</p>
+<ul>
+<li>Open brace &quot;{&quot; appears on the line after the declaration statement</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">public</span> <span class="keyword">class</span> MyClass
+{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-52">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-52">&#182;</a>
+              </div>
+              <ul>
+<li>No space between a method name and the parenthesis &quot;(&quot; starting its parameter list</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> <span class="keyword">void</span> ShowAge(<span class="keyword">int</span> age)
+    {
+        statements;
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-53">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-53">&#182;</a>
+              </div>
+              <ul>
+<li>Methods are separated by one blank line</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> <span class="keyword">void</span> ShowName(<span class="keyword">string</span> name)
+    {
+        statements;
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-54">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-54">&#182;</a>
+              </div>
+              <ul>
+<li>Closing brace &quot;}&quot; starts a line by itself indented to match its corresponding opening statement, except when it is a null statement the &quot;}&quot; should appear immediately after the &quot;{&quot;</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">public</span> <span class="keyword">void</span> DoNothing() { }
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-55">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-55">&#182;</a>
+              </div>
+              <h2 id="statements">Statements</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-56">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-56">&#182;</a>
+              </div>
+              <p>Each line should contain at most one statement.
+correct</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> variableA = <span class="number">1</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-57">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-57">&#182;</a>
+              </div>
+              <p>avoid</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> variableB = <span class="number">1</span>; variableB += <span class="number">1</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-58">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-58">&#182;</a>
+              </div>
+              <p>Compound statements are statements that contain lists of statements enclosed in braces: &quot;{ statements }&quot;</p>
+<ul>
+<li>The enclosed statements should be indented one more level than the compound statement.</li>
+<li>The opening brace should immediately follow the line that begins the compound statement; the closing brace should match the column of the opening brace.</li>
+<li>Braces are used around all statements, even single statements, when they are part of a control structure, such as an if-else or for statement. This makes it easier to add statements without accidentally introduction bugs due to forgetting to add braces.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)
+{
+    <span class="keyword">if</span> (someListOfBools[i])
+    {
+        <span class="keyword">return</span>;
+    }
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-59">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-59">&#182;</a>
+              </div>
+              <p>A <strong>return</strong> statement with a value should not use parentheses unless they make the return value more obvious in some way.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">return</span> foo;
+<span class="keyword">return</span> (likeMusic &amp;&amp; likeMovies);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-60">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-60">&#182;</a>
+              </div>
+              <p>More example on compound statements.
+some of the examples below are pseudo-code</p>
+<p>The <strong>if-else</strong> class of statements should have the following form, <strong><em>always use braces</em></strong>.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">string</span> masks = <span class="string">"XXXXXX"</span>;
+
+<span class="keyword">if</span> (accountNumberLength &gt;= <span class="number">6</span>)
+{
+    <span class="keyword">return</span> masks + accountNumber.Remove(<span class="number">0</span>, <span class="number">6</span>);
+}
+<span class="keyword">else</span>
+{
+    <span class="keyword">return</span> masks;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-61">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-61">&#182;</a>
+              </div>
+              <p>A <strong>for</strong> statement should have the following form.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">for</span> (initialization; condition; update)
+{
+    statement;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-62">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-62">&#182;</a>
+              </div>
+              <p>An empty <strong>for</strong> statement (one in which all the work is done in the initialization, condition, and update clauses) should have the following form:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">for</span> (initialization; condition; update);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-63">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-63">&#182;</a>
+              </div>
+              <p>A <strong>while</strong> statement should have the following form.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">while</span> (condition)
+{
+    statements;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-64">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-64">&#182;</a>
+              </div>
+              <p>An empty <strong>while</strong> statement should have the following form.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">while</span> (condition);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-65">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-65">&#182;</a>
+              </div>
+              <p>A <strong>do-while</strong> statement should have the following form.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">do</span>
+{
+    statements;
+}
+<span class="keyword">while</span> (condition);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-66">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-66">&#182;</a>
+              </div>
+              <p>A <strong>switch</strong> statement should have the following form.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">switch</span> (condition)
+{
+    <span class="keyword">case</span> ABC:
+    {
+        statements;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-67">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-67">&#182;</a>
+              </div>
+              <p>Add this comment everytime the case falls through</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        add comment here: <span class="comment">// falls through</span>
+    }
+    <span class="keyword">case</span> DEF:
+    {
+        statements;
+        <span class="keyword">break</span>;
+    }
+    <span class="keyword">default</span>:
+    {
+        statements;
+        <span class="keyword">break</span>;
+    }
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-68">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-68">&#182;</a>
+              </div>
+              <p>A <strong>try-catch</strong> statement should have the following form.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">try</span>
+{
+    statements;
+}
+<span class="keyword">catch</span> (ExceptionClass e)
+{
+    statements;
+}
+<span class="keyword">finally</span>
+{
+    statements; <span class="comment">// Use finally only if needed</span>
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-69">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-69">&#182;</a>
+              </div>
+              <h2 id="white-space">White Space</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-70">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-70">&#182;</a>
+              </div>
+              <p><strong><em>Blank lines</em></strong> improve readability by setting off sections of code that are logically related.
+One blank line (two carriage returns) should always be used in the following circumstances:</p>
+<ul>
+<li>Between methods</li>
+<li>Before a block or single line comment</li>
+<li>Between the local variables in a method and its first statement</li>
+<li>Between logical sections inside a method to improve readability</li>
+</ul>
+<p>Do not insert a blank line before <em>loop</em>s, <em>if</em>s, <em>using</em>s, etc if the previous line is not indented as far as the current statement or it is a comment.</p>
+<p>Do not insert a blank line after a closing curly bracket if the next line is not indented the same amount or it is a comment.
+correct usage of blank lines in a statement</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">public</span> <span class="keyword">void</span> MyMethod()
+{
+    <span class="keyword">int</span> localVar = <span class="number">1</span>;
+
+    <span class="keyword">using</span> (SqlConnection conn = <span class="keyword">new</span> ...)
+    {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-71">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-71">&#182;</a>
+              </div>
+              <p>statements</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    }
+
+    <span class="keyword">int</span> test = <span class="number">0</span>;
+
+    <span class="keyword">for</span> (<span class="keyword">int</span> index = <span class="number">0</span>; index &lt; limit; index++)
+    {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-72">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-72">&#182;</a>
+              </div>
+              <p>statements</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    }
+
+    <span class="keyword">while</span> (test &gt; limit)
+    {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-73">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-73">&#182;</a>
+              </div>
+              <p>statements</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    }
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-74">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-74">&#182;</a>
+              </div>
+              <p>White spaces should be used in the following circumstances</p>
+<ul>
+<li>A keyword followed by a parenthesis should be separated by a space (this is default Visual Studio behavior).</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">if</span> (condition)
+{
+    statements;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-75">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-75">&#182;</a>
+              </div>
+              <ul>
+<li>A blank space should appear after commas in argument lists.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>SomeMethod(arg1, arg2);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-76">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-76">&#182;</a>
+              </div>
+              <ul>
+<li>All binary operators except . (period) should be separated from the operands by spaces. White spaces should never separate unary operators such as unary minus, increment (&quot;++&quot;), decrement (&quot;--&quot;) for their operands.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>nice += <span class="number">1</span>;
+counter++;</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
