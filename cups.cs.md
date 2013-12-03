@@ -2,22 +2,22 @@ C# Coding Standards
 ===================
 
 This is a sample file illustrating the coding standard of C# for CUPS team.
-This annotated source was generated with [Docco](http://jashkenas.github.io/docco/).
+
+This annotated [source](https://github.com/luislee818/cups_coding_standards) was generated with [Docco](http://jashkenas.github.io/docco/).
 
 File Organization
 -----------------
 
 ####The Namespace And Using Statements
-The first non-comment line of most c# source files is the using statements.
-After that, the namespace will follow: For example:
+The first non-comment line of most C# source files is the **using** statements.
+After that, the *namespace* will follow: For example:
     using System;
     using System.Web;
 
     namespace TaylorCorp.TD.Travel.Ttrs.BO
 
 ####CLASS AND INTERFACE DECLARATIONS
-Description of Class or Interface, comment with ///
-    /// Documentations for SomeRandomClass
+Description of *Class* or *Interface*, comment with ///
     public class SomeRandomClass
     {
 
@@ -78,7 +78,7 @@ When an expression will not fit on a single line, break it according to these ge
 * Break after a comma
 * Break after an operator
 * Prefer higher-level breaks to lower-level breaks
-* levelIf the above rules lead to a confusing code or to code that’s squished up against the right margin, just indent with a Tab instead
+* If the above rules lead to a confusing code or to code that’s squished up against the right margin, just indent with a Tab instead
 * Indentationent with a Tab from the primary/first line
 * Avoid breaking up parenthesized expressions
 
@@ -90,9 +90,6 @@ Avoid block comments, for they make formatting and reading difficult.
     /* should avoid this kind of comment */
 
 Short comments can appear on a single line indented to the level of the code that follows. If a comment needs to be written in multiple lines use single line comments.
-    // Use comments
-    // in
-    // this style
 
 Use tab (equals to 4 spaces) between statement and trailing comments
     var mysteryVariable;    // trailing comments
@@ -100,8 +97,7 @@ Use tab (equals to 4 spaces) between statement and trailing comments
 Naming Conventions
 ------------------
 ####General naming conventions
-Files should be in Pascal case
-    // Filename: SomeClassFile.cs
+Files should be in Pascal case, for example: ***SomeClassFile.cs***
 
 Namespaces should be in Pascal case, and in the following convention (*department* is optional):
 
@@ -264,12 +260,12 @@ When coding C# classes and interfaces, the following formatting rules should be 
 * No space between a method name and the parenthesis "(" starting its parameter list
         public void ShowAge(int age)
         {
-            // ...
+            statements;
         }
 * Methods are separated by one blank line
         public void ShowName(string name)
         {
-            // ...
+            statements;
         }
 * Closing brace "}" starts a line by itself indented to match its corresponding opening statement, except when it is a null statement the "}" should appear immediately after the "{"
         public void DoNothing() { }
@@ -347,7 +343,8 @@ A **switch** statement should have the following form.
         case ABC:
         {
             statements;
-            // falls through (add this comment everytime the case falls through)
+Add this comment everytime the case falls through
+            add comment here: // falls through
         }
         case DEF:
         {
@@ -372,8 +369,7 @@ A **try-catch** statement should have the following form.
     }
     finally
     {
-        statements;
-        // Use finally only if needed
+        statements; // Use finally only if needed
     }
 
 White Space
@@ -394,14 +390,14 @@ Do not insert a blank line after a closing curly bracket if the next line is not
     {
         int localVar = 1;
 
-        using(SqlConnection conn = new ...)
+        using (SqlConnection conn = new ...)
         {
             // statements
         }
 
         int test = 0;
 
-        for(int index = 0; index < limit; index++)
+        for (int index = 0; index < limit; index++)
         {
             // statements
         }
