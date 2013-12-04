@@ -282,7 +282,7 @@ A **return** statement with a value should not use parentheses unless they make 
     return (likeMusic && likeMovies);
 
 More example on compound statements.
-    // some of the examples below are pseudo-code
+    Note: some of the examples below are pseudo-code
 
 The **if-else** class of statements should have the following form, ***always use braces***.
     string masks = "XXXXXX";
