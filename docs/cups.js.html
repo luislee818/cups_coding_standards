@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>JavaScript Coding Standards</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <h1 id="javascript-coding-standards">JavaScript Coding Standards</h1>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>This is a sample file illustrating the coding standard of JavaScript for CUPS team. When contributing
+to the Design Studio, this coding standard must be complied.</p>
+<ul>
+<li>We use <a href="http://requirejs.org/">RequireJS</a> to manage modules in our code.</li>
+<li>We use <a href="http://www.jshint.com/">JSHint</a> to carry on our code quality check, the rules are in <a href="https://github.com/luislee818/dotfiles/blob/master/jshintrc">here</a>.</li>
+<li>We partially comply with <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a>, you can follow the code convention by imitating previous code.</li>
+</ul>
+<p>This annotated source was generated with <a href="http://jashkenas.github.io/docco/">Docco</a>.</p>
+<h2 id="package-management-">Package Management:</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Use &quot;define&quot; from RequireJS to define your module. Note: one file should always contain one module.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>Note: some of the examples below are pseudo-code
+
+define([<span class="string">"studio/utils"</span>, <span class="string">"studio/configs"</span>], <span class="function"><span class="keyword">function</span> <span class="params">(utils, configs)</span>) {</span>
+    <span class="keyword">var</span> myExampleModule;
+
+    myExampleModule.functionA = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+        <span class="keyword">return</span> <span class="literal">undefined</span>;
+    };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Return your module at last, it can be a object.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">return</span> myExampleModule;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Or a class constructor</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>define([<span class="string">"studio/utils"</span>, <span class="string">"studio/configs"</span>], <span class="function"><span class="keyword">function</span> <span class="params">(utils, configs)</span>) {</span>
+    <span class="keyword">var</span> exampleClassConstructor;
+
+    exampleClassConstructor = <span class="function"><span class="keyword">function</span> <span class="params">(a, b, c)</span> {</span>
+        <span class="keyword">this</span>.a = a;
+        <span class="keyword">this</span>.b = b;
+        <span class="keyword">this</span>.c = c;
+    };
+
+    <span class="keyword">return</span> exampleClassConstructor;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <h2 id="coding-style-rules">Coding Style Rules</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p><strong>Declarations with &quot;var&quot; always.</strong></p>
+<p>When you fail to specify var, the variable gets placed in the global context, potentially clobbering existing values. Also, if there&#39;s no declaration, it&#39;s hard to tell in what scope a variable lives (e.g., it could be in the Document or Window just as easily as in the local scope). So always declare with var.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> variableExample;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p><strong>Always use semicolons</strong>
+Relying on implicit insertion can cause subtle, hard to debug problems.</p>
+<h2 id="naming">Naming</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Use names like this:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="function"><span class="keyword">function</span> <span class="title">theFunctionName</span> <span class="params">()</span> {</span> };
+<span class="keyword">var</span> variableName = <span class="number">42</span>;
+<span class="keyword">var</span> ClassName = <span class="function"><span class="keyword">function</span> <span class="params">(a)</span> {</span>
+    <span class="keyword">this</span>.a = a;
+};
+<span class="keyword">var</span> CONSTANT_VALUES = <span class="string">"constant"</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <h2 id="code-formatting">Code Formatting</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p><strong>Indentation</strong>
+We use <em>tabs</em> for indentation. Please change settings of your editor properly.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">if</span> (something) {
+    statements;
+    <span class="keyword">if</span> (somethingElse) {
+        statements;
+    }
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p><strong>Curly Braces</strong>
+Because of implicit semicolon insertion, always start your curly braces on the same line as whatever they&#39;re opening. <em>DON&#39;T</em> omit curly braces even if there&#39;s only one statement. For example:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">if</span> (something) {
+    statements;
+} <span class="keyword">else</span> {
+    statements;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p><strong>Blank lines</strong>
+Use newlines to group logically related pieces of code. For example:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>doSomethingTo(x);
+doSomethingElseTo(x);
+andThen(x);
+
+nowDoSomethingWith(y);
+
+andNowWith(z);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p><strong>Spaces</strong>
+Use spaces before and/or after <em>if</em>, <em>for</em>, <em>function</em>, <em>return</em> keywords, braces, curly braces and commas. For example:</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span> <span class="params">(x, y, z)</span> {</span>
+    <span class="keyword">if</span> (x === y) {
+        <span class="keyword">return</span> z;
+    }
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p><strong>Strings</strong>
+Prefer <strong>&quot;</strong> over <strong>&#39;</strong>.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> message = <span class="string">"This is some text message"</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <p>Use <strong>&#39;</strong> when output some html.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> htmlText = <span class="string">'&lt;div href="#"&gt;This is some html&lt;/div&gt;'</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <p><strong>Use JSHint</strong></p>
+<p><strong>Tips and Tricks</strong>
+Please see <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Tips_and_Tricks#Tips_and_Tricks">here</a> for JavaScript tips and tricks.</p>
+<p><strong>Useful Links from Li Dapeng</strong></p>
+<ul>
+<li><p>Part 1: Learn the language<br>
+Recommended books on learning JavaScript programming language:
+JavaScript, the Good Parts: download here: <a href="http://d.pr/f/h6e9">http://d.pr/f/h6e9</a> , Amazon <a href="http://www.amazon.com/JavaScript-The-Good-Parts-ebook/dp/B0026OR2ZY/ref=sr_1_6?ie=UTF8&amp;qid=1374126438&amp;sr=8-6&amp;keywords=javascript">link</a><br>
+Eloquent JavaScript: download here: <a href="http://d.pr/f/Kvze">http://d.pr/f/Kvze</a>,  Amazon <a href="http://www.amazon.com/Eloquent-JavaScript-Introduction-Programming-ebook/dp/B004OEJNQ0/ref=sr_1_26?ie=UTF8&amp;qid=1374126449&amp;sr=8-26&amp;keywords=javascript">link</a><br>
+JavaScript, the Definitive Guide: download here: <a href="http://d.pr/f/hDZr">http://d.pr/f/hDZr</a>,  Amazon <a href="http://www.amazon.com/JavaScript-Definitive-Guide-Guides-ebook/dp/B004XQX4K0/ref=sr_1_2?ie=UTF8&amp;qid=1374126438&amp;sr=8-2&amp;keywords=javascript">link</a><br></p>
+</li>
+<li><p>Just Enough JavaScript series on Dapeng Li&#39;s blog (shamelessly promoted by himself):<br>
+Intro: <a href="http://www.dapengli.com/2012/05/15/just-enough-javascript-introduction/">http://www.dapengli.com/2012/05/15/just-enough-javascript-introduction/</a><br>
+Variable scope and object: <a href="http://www.dapengli.com/2012/05/15/just-enough-javascript-variable-scope-and-object/">http://www.dapengli.com/2012/05/15/just-enough-javascript-variable-scope-and-object/</a><br>
+Function: <a href="http://www.dapengli.com/2012/05/16/just-enough-javascript-function/">http://www.dapengli.com/2012/05/16/just-enough-javascript-function/</a><br>
+Prototype and inheritance: <a href="http://www.dapengli.com/2012/05/17/just-enough-javascript-prototype-and-inheritance/">http://www.dapengli.com/2012/05/17/just-enough-javascript-prototype-and-inheritance/</a><br></p>
+</li>
+<li><p>Part 2: Module Pattern<br>
+Module Pattern
+<a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript</a></p>
+</li>
+<li><p>RequireJS (which Design Studio uses to manage module dependencies):
+<a href="http://requirejs.org/">http://requirejs.org/</a></p>
+</li>
+<li><p>Part 3: Unit Test and Test-Driven<br>
+Recommended book: download here: <a href="http://d.pr/f/xN4f">http://d.pr/f/xN4f</a>, Amazon <a href="http://www.amazon.com/The-Art-Unit-Testing-Examples/dp/1933988274/ref=sr_1_1?ie=UTF8&amp;qid=1374126377&amp;sr=8-1&amp;keywords=art+of+unit+testing">link</a></p>
+</li>
+<li><p>Bonus: Learning Chrome DevTools<br>
+Code School Chrome Dev Tools course: <a href="http://www.codeschool.com/courses/discover-devtools">http://www.codeschool.com/courses/discover-devtools</a></p>
+</li>
+</ul>
+
+            </div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

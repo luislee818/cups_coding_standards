@@ -13,31 +13,32 @@ This annotated source was generated with [Docco](http://jashkenas.github.io/docc
 Package Management:
 -------------------
 Use "define" from RequireJS to define your module. Note: one file should always contain one module.
+    Note: some of the examples below are pseudo-code
 
-	define(["studio/utils", "studio/configs"], function (utils, configs)) {
-		var myExampleModule;
+    define(["studio/utils", "studio/configs"], function (utils, configs)) {
+        var myExampleModule;
 
-		myExampleModule.functionA = function () {
-			return undefined;
-		};
+        myExampleModule.functionA = function () {
+            return undefined;
+        };
 
 Return your module at last, it can be a object.
 
-		return myExampleModule;
-	}
+        return myExampleModule;
+    }
 
 Or a class constructor
-	define(["studio/utils", "studio/configs"], function (utils, configs)) {
-		var exampleClassConstructor;
+    define(["studio/utils", "studio/configs"], function (utils, configs)) {
+        var exampleClassConstructor;
 
-		exampleClassConstructor = function (a, b, c) {
-			this.a = a;
-			this.b = b;
-			this.c = c;
-		};
+        exampleClassConstructor = function (a, b, c) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        };
 
-		return exampleClassConstructor;
-	}
+        return exampleClassConstructor;
+    }
 
 Coding Style Rules
 ------------------
@@ -45,7 +46,7 @@ Coding Style Rules
 
 When you fail to specify var, the variable gets placed in the global context, potentially clobbering existing values. Also, if there's no declaration, it's hard to tell in what scope a variable lives (e.g., it could be in the Document or Window just as easily as in the local scope). So always declare with var.
 
-	var variableExample;
+    var variableExample;
 
 **Always use semicolons**
 Relying on implicit insertion can cause subtle, hard to debug problems.
@@ -53,55 +54,55 @@ Relying on implicit insertion can cause subtle, hard to debug problems.
 Naming
 ------
 Use names like this:
-	function theFunctionName () { };
-	var variableName = 42;
-	var ClassName = function (a) {
-		this.a = a;
-	};
-	var CONSTANT_VALUES = "constant";
+    function theFunctionName () { };
+    var variableName = 42;
+    var ClassName = function (a) {
+        this.a = a;
+    };
+    var CONSTANT_VALUES = "constant";
 
 Code Formatting
 --------------
 **Indentation**
 We use *tabs* for indentation. Please change settings of your editor properly.
-	if (something) {
-		// ...
-		if (somethingElse) {
-			// ...
-		}
-	}
+    if (something) {
+        statements;
+        if (somethingElse) {
+            statements;
+        }
+    }
 **Curly Braces**
 Because of implicit semicolon insertion, always start your curly braces on the same line as whatever they're opening. _DON'T_ omit curly braces even if there's only one statement. For example:
-	if (something) {
-		// ...
-	} else {
-		// ...
-	}
+    if (something) {
+        statements;
+    } else {
+        statements;
+    }
 **Blank lines**
 Use newlines to group logically related pieces of code. For example:
-	doSomethingTo(x);
-	doSomethingElseTo(x);
-	andThen(x);
+    doSomethingTo(x);
+    doSomethingElseTo(x);
+    andThen(x);
 
-	nowDoSomethingWith(y);
+    nowDoSomethingWith(y);
 
-	andNowWith(z);
+    andNowWith(z);
 
 **Spaces**
 Use spaces before and/or after _if_, _for_, _function_, _return_ keywords, braces, curly braces and commas. For example:
 
-	var a = function (x, y, z) {
-		if (x === y) {
-			return z;
-		}
-	};
+    var a = function (x, y, z) {
+        if (x === y) {
+            return z;
+        }
+    };
 
 **Strings**
 Prefer **"** over **'**.
 
-	var message = "This is some text message";
+    var message = "This is some text message";
 Use **'** when output some html.
-	var htmlText = '<div href="#">This is some html</div>';
+    var htmlText = '<div href="#">This is some html</div>';
 
 **Use JSHint**
 
@@ -122,16 +123,16 @@ Variable scope and object: http://www.dapengli.com/2012/05/15/just-enough-javasc
 Function: http://www.dapengli.com/2012/05/16/just-enough-javascript-function/<br>
 Prototype and inheritance: http://www.dapengli.com/2012/05/17/just-enough-javascript-prototype-and-inheritance/<br>
 
-Part 2: Module Pattern<br>
+* Part 2: Module Pattern<br>
 Module Pattern
 http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
 
-RequireJS (which Design Studio uses to manage module dependencies):
+* RequireJS (which Design Studio uses to manage module dependencies):
 http://requirejs.org/
 
-Part 3: Unit Test and Test-Driven<br>
+* Part 3: Unit Test and Test-Driven<br>
 Recommended book: download here: http://d.pr/f/xN4f, Amazon [link](http://www.amazon.com/The-Art-Unit-Testing-Examples/dp/1933988274/ref=sr_1_1?ie=UTF8&qid=1374126377&sr=8-1&keywords=art+of+unit+testing)
 
-Bonus: Learning Chrome DevTools<br>
+* Bonus: Learning Chrome DevTools<br>
 Code School Chrome Dev Tools course: http://www.codeschool.com/courses/discover-devtools
 
