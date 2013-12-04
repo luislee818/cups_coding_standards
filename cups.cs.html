@@ -548,13 +548,15 @@ httpContext</pre></div></div>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-32">&#182;</a>
               </div>
-              <p>Avoid abbreviations, except for &quot;Identifier&quot; (use of &quot;id&quot; is accepted) and &quot;Okay&quot; (use of &quot;Ok&quot; is accepted). Use meaningful, descriptive words to name methods and variables. Do not use abbreviations.
-correct</p>
+              <p>Avoid abbreviations, except for &quot;Identifier&quot; (use of &quot;id&quot; is accepted) and &quot;Okay&quot; (use of &quot;Ok&quot; is accepted). Use meaningful, descriptive words to name methods and variables. Do not use abbreviations.</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="keyword">string</span> address;
-<span class="keyword">int</span> number;</pre></div></div>
+<span class="keyword">int</span> number;
+
+<span class="keyword">string</span> addr;    <span class="comment">// avoid</span>
+<span class="keyword">int</span> num;    <span class="comment">// avoid</span></pre></div></div>
             
         </li>
         
@@ -565,12 +567,18 @@ correct</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-33">&#182;</a>
               </div>
-              <p>avoid</p>
+              <h4 id="more-conventions">More conventions</h4>
+<p>Use descriptive variable names.</p>
+<p>Do not use single character variable names, except in loops.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="keyword">string</span> addr;
-<span class="keyword">int</span> num;</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numberOfLoops; i++)
+{
+}
+
+<span class="keyword">int</span> m;    <span class="comment">// avoid</span>
+<span class="keyword">string</span> s;    <span class="comment">// avoid</span></pre></div></div>
             
         </li>
         
@@ -581,16 +589,18 @@ correct</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-34">&#182;</a>
               </div>
-              <h4 id="more-conventions">More conventions</h4>
-<p>Use descriptive variable names.</p>
-<p>Do not use single character variable names, except in loops.
+              <p>Do not use <a href="http://en.wikipedia.org/wiki/Hungarian_notation">Hungarian notation.</a>.
 correct</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numberOfLoops; i++)
-{
-}</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> age;
+<span class="keyword">string</span> name;
+<span class="keyword">bool</span> married;
+
+<span class="keyword">int</span> iAge;    <span class="comment">// avoid</span>
+<span class="keyword">string</span> strName;    <span class="comment">// avoid</span>
+<span class="keyword">bool</span> bMarried;    <span class="comment">// avoid</span></pre></div></div>
             
         </li>
         
@@ -601,12 +611,12 @@ correct</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-35">&#182;</a>
               </div>
-              <p>avoid</p>
+              <p>Do not use underscore (_) for local variable names or to prefix member variables.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> m;
-<span class="keyword">string</span> s;</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> m_age;    <span class="comment">// avoid</span>
+<span class="keyword">string</span> m_name;    <span class="comment">// avoid</span></pre></div></div>
             
         </li>
         
@@ -616,58 +626,6 @@ correct</p>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-36">&#182;</a>
-              </div>
-              <p>Do not use <a href="http://en.wikipedia.org/wiki/Hungarian_notation">Hungarian notation.</a>.
-correct</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> age;
-<span class="keyword">string</span> name;
-<span class="keyword">bool</span> married;</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-37">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-37">&#182;</a>
-              </div>
-              <p>avoid</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> iAge;
-<span class="keyword">string</span> strName;
-<span class="keyword">bool</span> bMarried;</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-38">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-38">&#182;</a>
-              </div>
-              <p>Do not use underscore (_) for local variable names or to prefix member variables.
-avoid</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> m_age;
-<span class="keyword">string</span> m_name;</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-39">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-39">&#182;</a>
               </div>
               <p>Do prefix Boolean variables, properties and methods with words like &quot;is&quot;, &quot;has&quot;, &quot;can&quot;, etc.</p>
 
@@ -680,11 +638,11 @@ avoid</p>
         </li>
         
         
-        <li id="section-40">
+        <li id="section-37">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-40">&#182;</a>
+                <a class="pilcrow" href="#section-37">&#182;</a>
               </div>
               <p>Do name methos with a verb-object pairing.</p>
 
@@ -696,11 +654,11 @@ avoid</p>
         </li>
         
         
-        <li id="section-41">
+        <li id="section-38">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-41">&#182;</a>
+                <a class="pilcrow" href="#section-38">&#182;</a>
               </div>
               <p>Do name methods with return types to describe the object being returned.</p>
 
@@ -712,11 +670,11 @@ avoid</p>
         </li>
         
         
-        <li id="section-42">
+        <li id="section-39">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-42">&#182;</a>
+                <a class="pilcrow" href="#section-39">&#182;</a>
               </div>
               <p>Do suffix user controls with the word &quot;control&quot;.</p>
 
@@ -728,11 +686,11 @@ CustomSuperCrazyAjaxTextBoxControl.ascx</pre></div></div>
         </li>
         
         
-        <li id="section-43">
+        <li id="section-40">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-43">&#182;</a>
+                <a class="pilcrow" href="#section-40">&#182;</a>
               </div>
               <p>Do suffix UI elements with the control&#39;s name.</p>
 
@@ -744,46 +702,32 @@ CompanyDropDownList</pre></div></div>
         </li>
         
         
-        <li id="section-44">
+        <li id="section-41">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-44">&#182;</a>
+                <a class="pilcrow" href="#section-41">&#182;</a>
               </div>
-              <p>Do always use the C# keywords rather than the aliases in System namespace
-correct</p>
+              <p>Do always use the C# keywords rather than the aliases in System namespace</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="keyword">object</span> item1;
 <span class="keyword">string</span> item2;
-<span class="keyword">int</span> item3;</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-45">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-45">&#182;</a>
-              </div>
-              <p>avoid</p>
+<span class="keyword">int</span> item3;
 
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>Object item1;
-String item2;
-Int32 item3;</pre></div></div>
+Object item1;    <span class="comment">// avoid</span>
+String item2;    <span class="comment">// avoid</span>
+Int32 item3;    <span class="comment">// avoid</span></pre></div></div>
             
         </li>
         
         
-        <li id="section-46">
+        <li id="section-42">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-46">&#182;</a>
+                <a class="pilcrow" href="#section-42">&#182;</a>
               </div>
               <h2 id="declarations">Declarations</h2>
 
@@ -792,11 +736,11 @@ Int32 item3;</pre></div></div>
         </li>
         
         
-        <li id="section-47">
+        <li id="section-43">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-47">&#182;</a>
+                <a class="pilcrow" href="#section-43">&#182;</a>
               </div>
               <p>One declaration per line is recommended since it encourages commenting.
 correct</p>
@@ -804,31 +748,18 @@ correct</p>
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="keyword">int</span> level;    <span class="comment">// level of the indentations</span>
-<span class="keyword">int</span> size;    <span class="comment">// size of the table</span></pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-48">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-48">&#182;</a>
-              </div>
-              <p>avoid</p>
+<span class="keyword">int</span> size;    <span class="comment">// size of the table</span>
 
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> level, size;</pre></div></div>
+<span class="keyword">int</span> level, size;    <span class="comment">// avoid</span></pre></div></div>
             
         </li>
         
         
-        <li id="section-49">
+        <li id="section-44">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-49">&#182;</a>
+                <a class="pilcrow" href="#section-44">&#182;</a>
               </div>
               <p>Try to initialize local variables where they&#39;re declared. The only reason not to initialize a variable where it&#39;s declared is if the initial value depends on some computation occuring first.</p>
 
@@ -839,34 +770,15 @@ correct</p>
         </li>
         
         
-        <li id="section-50">
+        <li id="section-45">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-50">&#182;</a>
+                <a class="pilcrow" href="#section-45">&#182;</a>
               </div>
               <p>Avoid declarations that hide declarations at higher levels. For example, do not declare the same variable name in an inner block.</p>
-<p>Declare variables as close as possible to where it is first used.
-avoid</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> level = <span class="number">1</span>;
-<span class="keyword">if</span> (shouldProceed)
-{
-    <span class="keyword">int</span> level = <span class="number">20</span>;
-}</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-51">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-51">&#182;</a>
-              </div>
-              <p>When coding C# classes and interfaces, the following formatting rules should be followed.
+<p>Declare variables as close as possible to where it is first used.</p>
+<p>When coding C# classes and interfaces, the following formatting rules should be followed.
 some formatting rules</p>
 <ul>
 <li>Open brace &quot;{&quot; appears on the line after the declaration statement</li>
@@ -880,11 +792,11 @@ some formatting rules</p>
         </li>
         
         
-        <li id="section-52">
+        <li id="section-46">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-52">&#182;</a>
+                <a class="pilcrow" href="#section-46">&#182;</a>
               </div>
               <ul>
 <li>No space between a method name and the parenthesis &quot;(&quot; starting its parameter list</li>
@@ -900,11 +812,11 @@ some formatting rules</p>
         </li>
         
         
-        <li id="section-53">
+        <li id="section-47">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-53">&#182;</a>
+                <a class="pilcrow" href="#section-47">&#182;</a>
               </div>
               <ul>
 <li>Methods are separated by one blank line</li>
@@ -920,11 +832,11 @@ some formatting rules</p>
         </li>
         
         
-        <li id="section-54">
+        <li id="section-48">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-54">&#182;</a>
+                <a class="pilcrow" href="#section-48">&#182;</a>
               </div>
               <ul>
 <li>Closing brace &quot;}&quot; starts a line by itself indented to match its corresponding opening statement, except when it is a null statement the &quot;}&quot; should appear immediately after the &quot;{&quot;</li>
@@ -938,11 +850,11 @@ some formatting rules</p>
         </li>
         
         
-        <li id="section-55">
+        <li id="section-49">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-55">&#182;</a>
+                <a class="pilcrow" href="#section-49">&#182;</a>
               </div>
               <h2 id="statements">Statements</h2>
 
@@ -951,42 +863,29 @@ some formatting rules</p>
         </li>
         
         
-        <li id="section-56">
+        <li id="section-50">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-56">&#182;</a>
+                <a class="pilcrow" href="#section-50">&#182;</a>
               </div>
               <p>Each line should contain at most one statement.
 correct</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> variableA = <span class="number">1</span>;</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-57">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-57">&#182;</a>
-              </div>
-              <p>avoid</p>
+            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> variableA = <span class="number">1</span>;
 
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="keyword">int</span> variableB = <span class="number">1</span>; variableB += <span class="number">1</span>;</pre></div></div>
+<span class="keyword">int</span> variableB = <span class="number">1</span>; variableB += <span class="number">1</span>;    <span class="comment">// avoid</span></pre></div></div>
             
         </li>
         
         
-        <li id="section-58">
+        <li id="section-51">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-58">&#182;</a>
+                <a class="pilcrow" href="#section-51">&#182;</a>
               </div>
               <p>Compound statements are statements that contain lists of statements enclosed in braces: &quot;{ statements }&quot;</p>
 <ul>
@@ -1008,11 +907,11 @@ correct</p>
         </li>
         
         
-        <li id="section-59">
+        <li id="section-52">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-59">&#182;</a>
+                <a class="pilcrow" href="#section-52">&#182;</a>
               </div>
               <p>A <strong>return</strong> statement with a value should not use parentheses unless they make the return value more obvious in some way.</p>
 
@@ -1024,15 +923,28 @@ correct</p>
         </li>
         
         
-        <li id="section-60">
+        <li id="section-53">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-60">&#182;</a>
+                <a class="pilcrow" href="#section-53">&#182;</a>
               </div>
-              <p>More example on compound statements.
-some of the examples below are pseudo-code</p>
-<p>The <strong>if-else</strong> class of statements should have the following form, <strong><em>always use braces</em></strong>.</p>
+              <p>More example on compound statements.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>Note: some of the examples below are pseudo-code</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-54">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-54">&#182;</a>
+              </div>
+              <p>The <strong>if-else</strong> class of statements should have the following form, <strong><em>always use braces</em></strong>.</p>
 
             </div>
             
@@ -1050,11 +962,11 @@ some of the examples below are pseudo-code</p>
         </li>
         
         
-        <li id="section-61">
+        <li id="section-55">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-61">&#182;</a>
+                <a class="pilcrow" href="#section-55">&#182;</a>
               </div>
               <p>A <strong>for</strong> statement should have the following form.</p>
 
@@ -1068,11 +980,11 @@ some of the examples below are pseudo-code</p>
         </li>
         
         
-        <li id="section-62">
+        <li id="section-56">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-62">&#182;</a>
+                <a class="pilcrow" href="#section-56">&#182;</a>
               </div>
               <p>An empty <strong>for</strong> statement (one in which all the work is done in the initialization, condition, and update clauses) should have the following form:</p>
 
@@ -1083,11 +995,11 @@ some of the examples below are pseudo-code</p>
         </li>
         
         
-        <li id="section-63">
+        <li id="section-57">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-63">&#182;</a>
+                <a class="pilcrow" href="#section-57">&#182;</a>
               </div>
               <p>A <strong>while</strong> statement should have the following form.</p>
 
@@ -1101,11 +1013,11 @@ some of the examples below are pseudo-code</p>
         </li>
         
         
-        <li id="section-64">
+        <li id="section-58">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-64">&#182;</a>
+                <a class="pilcrow" href="#section-58">&#182;</a>
               </div>
               <p>An empty <strong>while</strong> statement should have the following form.</p>
 
@@ -1116,11 +1028,11 @@ some of the examples below are pseudo-code</p>
         </li>
         
         
-        <li id="section-65">
+        <li id="section-59">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-65">&#182;</a>
+                <a class="pilcrow" href="#section-59">&#182;</a>
               </div>
               <p>A <strong>do-while</strong> statement should have the following form.</p>
 
@@ -1135,11 +1047,11 @@ some of the examples below are pseudo-code</p>
         </li>
         
         
-        <li id="section-66">
+        <li id="section-60">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-66">&#182;</a>
+                <a class="pilcrow" href="#section-60">&#182;</a>
               </div>
               <p>A <strong>switch</strong> statement should have the following form.</p>
 
@@ -1154,11 +1066,11 @@ some of the examples below are pseudo-code</p>
         </li>
         
         
-        <li id="section-67">
+        <li id="section-61">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-67">&#182;</a>
+                <a class="pilcrow" href="#section-61">&#182;</a>
               </div>
               <p>Add this comment everytime the case falls through</p>
 
@@ -1181,11 +1093,11 @@ some of the examples below are pseudo-code</p>
         </li>
         
         
-        <li id="section-68">
+        <li id="section-62">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-68">&#182;</a>
+                <a class="pilcrow" href="#section-62">&#182;</a>
               </div>
               <p>A <strong>try-catch</strong> statement should have the following form.</p>
 
@@ -1207,11 +1119,11 @@ some of the examples below are pseudo-code</p>
         </li>
         
         
-        <li id="section-69">
+        <li id="section-63">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-69">&#182;</a>
+                <a class="pilcrow" href="#section-63">&#182;</a>
               </div>
               <h2 id="white-space">White Space</h2>
 
@@ -1220,11 +1132,11 @@ some of the examples below are pseudo-code</p>
         </li>
         
         
-        <li id="section-70">
+        <li id="section-64">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-70">&#182;</a>
+                <a class="pilcrow" href="#section-64">&#182;</a>
               </div>
               <p><strong><em>Blank lines</em></strong> improve readability by setting off sections of code that are logically related.
 One blank line (two carriage returns) should always be used in the following circumstances:</p>
@@ -1245,70 +1157,31 @@ correct usage of blank lines in a statement</p>
     <span class="keyword">int</span> localVar = <span class="number">1</span>;
 
     <span class="keyword">using</span> (SqlConnection conn = <span class="keyword">new</span> ...)
-    {</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-71">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-71">&#182;</a>
-              </div>
-              <p>statements</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>    }
+    {
+        statements
+    }
 
     <span class="keyword">int</span> test = <span class="number">0</span>;
 
     <span class="keyword">for</span> (<span class="keyword">int</span> index = <span class="number">0</span>; index &lt; limit; index++)
-    {</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-72">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-72">&#182;</a>
-              </div>
-              <p>statements</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>    }
+    {
+        statements
+    }
 
     <span class="keyword">while</span> (test &gt; limit)
-    {</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-73">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-73">&#182;</a>
-              </div>
-              <p>statements</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>    }
+    {
+        statements
+    }
 }</pre></div></div>
             
         </li>
         
         
-        <li id="section-74">
+        <li id="section-65">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-74">&#182;</a>
+                <a class="pilcrow" href="#section-65">&#182;</a>
               </div>
               <p>White spaces should be used in the following circumstances</p>
 <ul>
@@ -1325,11 +1198,11 @@ correct usage of blank lines in a statement</p>
         </li>
         
         
-        <li id="section-75">
+        <li id="section-66">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-75">&#182;</a>
+                <a class="pilcrow" href="#section-66">&#182;</a>
               </div>
               <ul>
 <li>A blank space should appear after commas in argument lists.</li>
@@ -1342,11 +1215,11 @@ correct usage of blank lines in a statement</p>
         </li>
         
         
-        <li id="section-76">
+        <li id="section-67">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-76">&#182;</a>
+                <a class="pilcrow" href="#section-67">&#182;</a>
               </div>
               <ul>
 <li>All binary operators except . (period) should be separated from the operands by spaces. White spaces should never separate unary operators such as unary minus, increment (&quot;++&quot;), decrement (&quot;--&quot;) for their operands.</li>

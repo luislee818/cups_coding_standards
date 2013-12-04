@@ -59,12 +59,14 @@ to the Design Studio, this coding standard must be complied.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>define([<span class="string">"studio/utils"</span>, <span class="string">"studio/configs"</span>], <span class="reserved">function</span> (utils, configs)) {
-	<span class="reserved">var</span> myExampleModule;
+            <div class="content"><div class='highlight'><pre>Note: some of the examples below are pseudo-code
 
-	myExampleModule.functionA = <span class="reserved">function</span> () {
-		<span class="keyword">return</span> <span class="literal">undefined</span>;
-	};</pre></div></div>
+define([<span class="string">"studio/utils"</span>, <span class="string">"studio/configs"</span>], <span class="function"><span class="keyword">function</span> <span class="params">(utils, configs)</span>) {</span>
+    <span class="keyword">var</span> myExampleModule;
+
+    myExampleModule.functionA = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+        <span class="keyword">return</span> <span class="literal">undefined</span>;
+    };</pre></div></div>
             
         </li>
         
@@ -79,7 +81,7 @@ to the Design Studio, this coding standard must be complied.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>	<span class="keyword">return</span> myExampleModule;
+            <div class="content"><div class='highlight'><pre>    <span class="keyword">return</span> myExampleModule;
 }</pre></div></div>
             
         </li>
@@ -95,16 +97,16 @@ to the Design Studio, this coding standard must be complied.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>define([<span class="string">"studio/utils"</span>, <span class="string">"studio/configs"</span>], <span class="reserved">function</span> (utils, configs)) {
-	<span class="reserved">var</span> exampleClassConstructor;
+            <div class="content"><div class='highlight'><pre>define([<span class="string">"studio/utils"</span>, <span class="string">"studio/configs"</span>], <span class="function"><span class="keyword">function</span> <span class="params">(utils, configs)</span>) {</span>
+    <span class="keyword">var</span> exampleClassConstructor;
 
-	exampleClassConstructor = <span class="reserved">function</span> (a, b, c) {
-		this.a = a;
-		this.b = b;
-		this.c = c;
-	};
+    exampleClassConstructor = <span class="function"><span class="keyword">function</span> <span class="params">(a, b, c)</span> {</span>
+        <span class="keyword">this</span>.a = a;
+        <span class="keyword">this</span>.b = b;
+        <span class="keyword">this</span>.c = c;
+    };
 
-	<span class="keyword">return</span> exampleClassConstructor;
+    <span class="keyword">return</span> exampleClassConstructor;
 }</pre></div></div>
             
         </li>
@@ -134,7 +136,7 @@ to the Design Studio, this coding standard must be complied.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="reserved">var</span> variableExample;</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> variableExample;</pre></div></div>
             
         </li>
         
@@ -164,12 +166,12 @@ Relying on implicit insertion can cause subtle, hard to debug problems.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="reserved">function</span> theFunctionName () { };
-<span class="reserved">var</span> variableName = <span class="number">42</span>;
-<span class="reserved">var</span> ClassName = <span class="reserved">function</span> (a) {
-	this.a = a;
+            <div class="content"><div class='highlight'><pre><span class="function"><span class="keyword">function</span> <span class="title">theFunctionName</span> <span class="params">()</span> {</span> };
+<span class="keyword">var</span> variableName = <span class="number">42</span>;
+<span class="keyword">var</span> ClassName = <span class="function"><span class="keyword">function</span> <span class="params">(a)</span> {</span>
+    <span class="keyword">this</span>.a = a;
 };
-<span class="reserved">var</span> CONSTANT_VALUES = <span class="string">"constant"</span>;</pre></div></div>
+<span class="keyword">var</span> CONSTANT_VALUES = <span class="string">"constant"</span>;</pre></div></div>
             
         </li>
         
@@ -199,10 +201,10 @@ We use <em>tabs</em> for indentation. Please change settings of your editor prop
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="keyword">if</span> (something) {
-	<span class="regexp">//</span> ...
-	<span class="keyword">if</span> (somethingElse) {
-		<span class="regexp">//</span> ...
-	}
+    statements;
+    <span class="keyword">if</span> (somethingElse) {
+        statements;
+    }
 }</pre></div></div>
             
         </li>
@@ -220,9 +222,9 @@ Because of implicit semicolon insertion, always start your curly braces on the s
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="keyword">if</span> (something) {
-	<span class="regexp">//</span> ...
+    statements;
 } <span class="keyword">else</span> {
-	<span class="regexp">//</span> ...
+    statements;
 }</pre></div></div>
             
         </li>
@@ -261,10 +263,10 @@ Use spaces before and/or after <em>if</em>, <em>for</em>, <em>function</em>, <em
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="reserved">var</span> a = <span class="reserved">function</span> (x, y, z) {
-	<span class="keyword">if</span> (x === y) {
-		<span class="keyword">return</span> z;
-	}
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span> <span class="params">(x, y, z)</span> {</span>
+    <span class="keyword">if</span> (x === y) {
+        <span class="keyword">return</span> z;
+    }
 };</pre></div></div>
             
         </li>
@@ -281,7 +283,7 @@ Prefer <strong>&quot;</strong> over <strong>&#39;</strong>.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="reserved">var</span> message = <span class="string">"This is some text message"</span>;</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> message = <span class="string">"This is some text message"</span>;</pre></div></div>
             
         </li>
         
@@ -296,7 +298,7 @@ Prefer <strong>&quot;</strong> over <strong>&#39;</strong>.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="reserved">var</span> htmlText = <span class="string">'&lt;div href="#"&gt;This is some html&lt;/div&gt;'</span>;</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> htmlText = <span class="string">'&lt;div href="#"&gt;This is some html&lt;/div&gt;'</span>;</pre></div></div>
             
         </li>
         
@@ -324,16 +326,20 @@ Variable scope and object: <a href="http://www.dapengli.com/2012/05/15/just-enou
 Function: <a href="http://www.dapengli.com/2012/05/16/just-enough-javascript-function/">http://www.dapengli.com/2012/05/16/just-enough-javascript-function/</a><br>
 Prototype and inheritance: <a href="http://www.dapengli.com/2012/05/17/just-enough-javascript-prototype-and-inheritance/">http://www.dapengli.com/2012/05/17/just-enough-javascript-prototype-and-inheritance/</a><br></p>
 </li>
-</ul>
-<p>Part 2: Module Pattern<br>
+<li><p>Part 2: Module Pattern<br>
 Module Pattern
 <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript</a></p>
-<p>RequireJS (which Design Studio uses to manage module dependencies):
+</li>
+<li><p>RequireJS (which Design Studio uses to manage module dependencies):
 <a href="http://requirejs.org/">http://requirejs.org/</a></p>
-<p>Part 3: Unit Test and Test-Driven<br>
+</li>
+<li><p>Part 3: Unit Test and Test-Driven<br>
 Recommended book: download here: <a href="http://d.pr/f/xN4f">http://d.pr/f/xN4f</a>, Amazon <a href="http://www.amazon.com/The-Art-Unit-Testing-Examples/dp/1933988274/ref=sr_1_1?ie=UTF8&amp;qid=1374126377&amp;sr=8-1&amp;keywords=art+of+unit+testing">link</a></p>
-<p>Bonus: Learning Chrome DevTools<br>
+</li>
+<li><p>Bonus: Learning Chrome DevTools<br>
 Code School Chrome Dev Tools course: <a href="http://www.codeschool.com/courses/discover-devtools">http://www.codeschool.com/courses/discover-devtools</a></p>
+</li>
+</ul>
 
             </div>
             
