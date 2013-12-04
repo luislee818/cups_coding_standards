@@ -159,26 +159,22 @@ Acronyms shorter than three letters should be all uppercase, acronyms longer tha
     stringHtml
     httpContext
 Avoid abbreviations, except for "Identifier" (use of "id" is accepted) and "Okay" (use of "Ok" is accepted). Use meaningful, descriptive words to name methods and variables. Do not use abbreviations.
-    // correct
     string address;
     int number;
 
-    // avoid
-    string addr;
-    int num;
+    string addr;    // avoid
+    int num;    // avoid
 
 ####More conventions
 Use descriptive variable names.
 
 Do not use single character variable names, except in loops.
-    // correct
     for (int i = 0; i < numberOfLoops; i++)
     {
     }
 
-    // avoid
-    int m;
-    string s;
+    int m;    // avoid
+    string s;    // avoid
 
 Do not use [Hungarian notation.](http://en.wikipedia.org/wiki/Hungarian_notation).
     // correct
@@ -186,15 +182,13 @@ Do not use [Hungarian notation.](http://en.wikipedia.org/wiki/Hungarian_notation
     string name;
     bool married;
 
-    // avoid
-    int iAge;
-    string strName;
-    bool bMarried;
+    int iAge;    // avoid
+    string strName;    // avoid
+    bool bMarried;    // avoid
 
 Do not use underscore (_) for local variable names or to prefix member variables.
-    // avoid
-    int m_age;
-    string m_name;
+    int m_age;    // avoid
+    string m_name;    // avoid
 
 Do prefix Boolean variables, properties and methods with words like "is", "has", "can", etc.
     bool isValid;
@@ -218,15 +212,13 @@ Do suffix UI elements with the control's name.
     CompanyDropDownList
 
 Do always use the C# keywords rather than the aliases in System namespace
-    // correct
     object item1;
     string item2;
     int item3;
 
-    // avoid
-    Object item1;
-    String item2;
-    Int32 item3;
+    Object item1;    // avoid
+    String item2;    // avoid
+    Int32 item3;    // avoid
 
 Declarations
 ------------
@@ -236,8 +228,7 @@ One declaration per line is recommended since it encourages commenting.
     int level;    // level of the indentations
     int size;    // size of the table
 
-    // avoid
-    int level, size;
+    int level, size;    // avoid
 
 Try to initialize local variables where they're declared. The only reason not to initialize a variable where it's declared is if the initial value depends on some computation occuring first.
     int indentationInSpaces = 4;
@@ -245,12 +236,6 @@ Try to initialize local variables where they're declared. The only reason not to
 Avoid declarations that hide declarations at higher levels. For example, do not declare the same variable name in an inner block.
 
 Declare variables as close as possible to where it is first used.
-    // avoid
-    int level = 1;
-    if (shouldProceed)
-    {
-        int level = 20;
-    }
 
 When coding C# classes and interfaces, the following formatting rules should be followed.
     // some formatting rules
@@ -278,8 +263,7 @@ Each line should contain at most one statement.
     // correct
     int variableA = 1;
 
-    // avoid
-    int variableB = 1; variableB += 1;
+    int variableB = 1; variableB += 1;    // avoid
 
 Compound statements are statements that contain lists of statements enclosed in braces: "{ statements }"
 * The enclosed statements should be indented one more level than the compound statement.
@@ -392,19 +376,19 @@ Do not insert a blank line after a closing curly bracket if the next line is not
 
         using (SqlConnection conn = new ...)
         {
-            // statements
+            statements
         }
 
         int test = 0;
 
         for (int index = 0; index < limit; index++)
         {
-            // statements
+            statements
         }
 
         while (test > limit)
         {
-            // statements
+            statements
         }
     }
 
