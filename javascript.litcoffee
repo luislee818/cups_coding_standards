@@ -41,13 +41,13 @@ Or a class constructor
 
 Coding Style Rules
 ------------------
-- Declarations with "var" always.
+**Declarations with "var" always.**
 
 When you fail to specify var, the variable gets placed in the global context, potentially clobbering existing values. Also, if there's no declaration, it's hard to tell in what scope a variable lives (e.g., it could be in the Document or Window just as easily as in the local scope). So always declare with var.
 
 	var variableExample;
 
-- Always use semicolons
+**Always use semicolons**
 Relying on implicit insertion can cause subtle, hard to debug problems.
 
 Naming
@@ -64,18 +64,19 @@ Code Formatting
 --------------
 **Indentation**
 We use *tabs* for indentation. Please change settings of your editor properly.
-
+	if (something) {
+		// ...
+		if (somethingElse) {
+			// ...
+		}
+	}
 **Curly Braces**
-Because of implicit semicolon insertion, always start your curly braces on the same line as whatever they're opening. For example:
-
+Because of implicit semicolon insertion, always start your curly braces on the same line as whatever they're opening. _DON'T_ omit curly braces even if there's only one statement. For example:
 	if (something) {
 		// ...
 	} else {
 		// ...
 	}
-
-_DON'T_ omit curly braces even if when there's only one statement.
-
 **Blank lines**
 Use newlines to group logically related pieces of code. For example:
 	doSomethingTo(x);
